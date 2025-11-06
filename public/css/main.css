@@ -1,0 +1,325 @@
+:root {
+  --background-color: #ffc800; /* Professional yellow */
+  --primary-color: #0a1d55;    /* Navy blue */
+  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Unbounded', cursive;
+}
+
+/* General setup */
+body {
+  font-family: var(--font-body);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin: 0;
+  background-image: url('../img/noise-bg.png');
+  background-repeat: repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* Navbar */
+.navbar {
+  background: transparent !important;
+  padding: 1.2rem 3rem;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  color: var(--primary-color) !important;
+  font-weight: 500;
+  margin-right: 1.2rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 2rem;
+  padding: 0.4rem 1.6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Hero section */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  padding: 1.2rem 3rem;
+  opacity: 0.9;
+}
+
+/* ------------------------------------------------------ */
+/* 🔸 RESPONSIVE DESIGN SECTION */
+/* ------------------------------------------------------ */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  footer {
+    padding: 1rem 2rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-link {
+    margin: 0.4rem 0;
+  }
+
+  .btn {
+    padding: 0.35rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}
+
+/* Extra small screens (under 480px) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+}
+
+
+
+.container-fluid{
+    max-width: 1600px;
+    padding-left: 3%;
+}
+
+
+/* ===== Footer Styling ===== */
+.footer {
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 3rem;
+  margin-top: auto; /* pushes footer to bottom */
+}
+
+/* Footer links */
+.footer a,
+.footer .nav-link {
+  color: var(--primary-color) !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  font-weight: 500;
+}
+
+.footer a:hover,
+.footer .nav-link:hover {
+  opacity: 1;
+}
+
+/* Make the footer text color subtle */
+.footer p {
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 992px) {
+  .footer {
+    padding: 1.2rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer .col-md-4,
+  .footer .nav {
+    justify-content: center !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer p {
+    order: 3; /* move copyright to bottom */
+    margin-top: 0.8rem;
+  }
+
+  .footer a.fw-bold {
+    order: 1;
+    font-size: 1.1rem;
+  }
+
+  .footer .nav {
+    order: 2;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer a.fw-bold {
+    font-size: 1rem;
+  }
+
+  .footer .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+
+/* Ensure the footer stays at bottom on all screens */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+main {
+  flex-grow: 1; /* pushes footer down */
+}
+
+/* Optional: smooth fade-in effect for footer */
+footer {
+  transition: all 0.3s ease-in-out;
+}
+
+.home-title::before{
+    content:url('../img/stars.svg');
+    position :absolute;
+    left: -60px;
+    top: -30px;
+  
+}
+
+.home-title::after{
+    content:url('../img/stars.svg');
+    position :absolute;
+    right: -50px;
+    bottom: -30px;
+  
+}
+
+@media(min-width:1200px){
+    .home{
+        background:
+        url('../img/human-1.svg') left bottom no-repeat,
+        url('../img/human-2.svg') right bottom no-repeat,
+        url('../img/noise-bg.png') left bottom repeat,
+        var(--background-color);
+    }
+    }
