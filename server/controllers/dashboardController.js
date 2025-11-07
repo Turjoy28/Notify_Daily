@@ -17,7 +17,12 @@ exports.dashboard = async (req, res) => {
     // Aggregate and paginate user notes
     const notes = await Note.aggregate([
       { $match: { user: new mongoose.Types.ObjectId(req.user.id) } }, // filter first for efficiency
-      { $sort: { updatedAt: -1 } },
+        {
+    $addFields: {
+      lastActivity: { $max: ["$createdAt", "$updatedAt"] } // use the newer of createdAt or updatedAt
+    }
+  },
+       { $sort: { lastActivity: -1 } },
       {
         $project: {
           title: { $substr: ["$title", 0, 30] },

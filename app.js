@@ -8,7 +8,7 @@ const port=5000||process.env.PORT;
 const session=require('express-session')
 const passport=require('passport')
 const MongStore=require('connect-mongo')
-
+const methodOverride = require('method-override');
 app.use(session({
     secret:'keyboard cat',
     resave:false,
@@ -21,7 +21,7 @@ app.use(session({
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-
+app.use(methodOverride('_method'));
 connectDB();
 app.use(passport.initialize())
 app.use(passport.session())
